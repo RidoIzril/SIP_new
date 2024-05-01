@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("inc_koneksi.php");
+include('koneksi.php');
 if (!isset($_SESSION['admin_username'])) {
     header("location:login.php");
 }
@@ -22,7 +22,7 @@ if (!isset($_SESSION['admin_username'])) {
             <ul>
                 <li><a href="admin_depan.php">Halaman Depan</a></li>
                 <?php if (in_array("guru", $_SESSION['admin_akses'])) { ?>
-                    <li><a href="admin_guru.php">Halaman Guru</a></li>
+                    <li><a href="admin.php">Admin</a></li>
                 <?php } ?>
                 <?php if (in_array("customer", $_SESSION['admin_akses'])) { ?>
                     <li><a href="customer.html">customer</a></li>

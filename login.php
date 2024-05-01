@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION['admin_username'])) {
-    header("location:admin_depan.php");
+    header("location:header.php");
 }
-include("koneksi.php");
-$username = "";
-$password = "";
+include('koneksi.php');
+$username = '';
+$password = '';
 $err = "";
 if (isset($_POST['login'])) {
     $username   = $_POST['username'];
@@ -17,13 +17,13 @@ if (isset($_POST['login'])) {
         $sql1 = "select * from admin where username = '$username'";
         $q1 = mysqli_query($koneksi, $sql1);
         $r1 = mysqli_fetch_array($q1);
-        if ($r1['password'] != md5($password)) {
+        if ($r1['password'] != MD5($password)) {
             $err .= "<li>Akun tidak ditemukan</li>";
         }
     }
     if (empty($err)) {
         $login_id = $r1['login_id'];
-        $sql1 = "select * from admin_akses where login_id = '$login_id'";
+        $sql1 = "select * from admin where login_id = '$login_id'";
         $q1 = mysqli_query($koneksi, $sql1);
         while ($r1 = mysqli_fetch_array($q1)) {
             $akses[] = $r1['akses_id']; 
@@ -34,12 +34,13 @@ if (isset($_POST['login'])) {
     }
     if (empty($err)) {
         $_SESSION['admin_username'] = $username;
-        $_SESSION['admin_akses'] = $akses;
-        header("location:admin_depan.php");
+        $_SESSION['admin'] = $akses;
+        header("location:customer.html");
         exit();
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
