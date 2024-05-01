@@ -1,0 +1,85 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(../img/login.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.contact {
+  padding: 9rem 7% 1.4rem;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.contact h2 span {
+  color: var(--primary);
+}
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.contact .row form {
+  flex: 1 1 4rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: #ffffffaf;
+  border: 1px solid #010101;
+  padding-left: 1rem;
+}
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  border-color: #fff;
+  background-color: #5063f2;
+  cursor: pointer;
+  border: 1px solid #eee;
+  margin-bottom: 25px;
+  border-radius: 35px;
+}
+
+.contact .row form .btn a {
+  color: #fff;
+}
+
+.contact .row form .btn a:hover {
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
