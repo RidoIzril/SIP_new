@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['admin_username'])) {
-    header("location:customer.html");
+    header("location:header.php");
 }
 include('koneksi.php');
 $username = '';
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
     if (empty($err)) {
         $_SESSION['admin_username'] = $username;
         $_SESSION['admin'] = $akses;
-        header("location:customer.html");
+        header("location:header.php");
         exit();
     }
 }
@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
