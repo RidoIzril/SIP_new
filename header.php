@@ -22,7 +22,7 @@ if (!isset($_SESSION['admin_username'])) {
             <ul>
                 <li><a href="admin_depan.php">Halaman Depan</a></li>
                 <?php if (in_array("guru", $_SESSION['admin_akses'])) { ?>
-                    <li><a href="admin.php">Admin</a></li>
+                    <li><a href="login.php">Admin</a></li>
                 <?php } ?>
                 <?php if (in_array("customer", $_SESSION['admin_akses'])) { ?>
                     <li><a href="customer.html">customer</a></li>

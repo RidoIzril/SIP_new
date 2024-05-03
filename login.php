@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['admin_username'])) {
-    header("location:header.php");
+    header("location:customer.html");
 }
 include('koneksi.php');
 $username = '';
