@@ -43,29 +43,40 @@ if (isset($_POST['login'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
-
-<body>
-    <div id="app">
-        <h1>Halaman Login</h1>
-        <?php
-        if ($err) {
-            echo "<ul>$err</ul>";
-        }
-        ?>
+    <link rel="stylesheet" href="css/login.css" />
+<div class="container right-panel-active">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+        <form action="#" class="form" id="form1">
+        <h2 class="form__title">Sign Up</h2>
+        <h3 class="form__title">As Customer</h3>
+        <input type="text" placeholder="User" class="input" />
+        <input type="email" placeholder="Email" class="input" />
+        <input type="password" placeholder="Password" class="input" />
+        <a href="index.html"  class="btnlog">Sign Up</a>
+        </form>
+        </div>
+        <!-- log In -->
+        <div class="container__form container--signin">
         <form action="" method="post">
+            <h2>Login</h2>
             <input type="text" value="<?php echo $username ?>" name="username" class="input" placeholder="Isikan Username..." /><br /><br />
             <input type="password" name="password" class="input" placeholder="Isikan Password" /><br /><br />
             <input type="submit" name="login" value="Masuk Ke Sistem" />
         </form>
-    </div>
-</body>
+        </div>
+        <!-- Overlay -->
+        <div class="container__overlay">
+        <div class="overlay">
+        <div class="overlay__panel overlay--left">
+        <button class="btnlog" id="signIn">Log In</button>
+        </div>
+        <div class="overlay__panel overlay--right">
+        <button class="btnlog" id="signUp">Sign Up</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        <script src="js/login.js"></script>
 
 </html>
